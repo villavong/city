@@ -1,0 +1,27 @@
+
+<div id="background">
+  <header class="cf">
+    <div class="wrapper_wide">
+      <a href="#" id="logo">CityWeTravel</a>
+        <nav class = "cf">
+          <ul class = "cf">
+            <% unless student_signed_in? %>
+              <li><%= link_to "Dashboard", students_path %></li>
+              <li><%= link_to "Sign In", new_student_session_path %></li>
+              <li><%= link_to "New Student", new_student_registration_path %></li>
+
+            <% else %>
+              <li><a href="#">Dashboard</a></li>
+              <li><%= link_to "Explore", students_path %></li>
+              <li><%= link_to "Sign Out", destroy_student_session_path, method: :delete %></li>
+            <% end %>
+          </ul>
+        </nav>
+    </div>
+  </header>
+  <div class="wrapper_skinny">
+    <h1>Share your schedule and what's happening in your city with other travelers and locals</h1>
+    <%= link_to "Sign Up", new_student_registration_path, class: "button button_highlight" %>
+    <%= link_to "Dashboard", students_path, class: "button button_white" %>
+  </div>
+</div>
