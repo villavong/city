@@ -56,6 +56,12 @@
       color: $white;
       margin: 0 0 .5rem 0;
     }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: $highlight;
+      margin: 0 0 .5rem 0;
+    }
     .description {
       width: 85%;
       margin: 0 auto 2rem auto;
@@ -114,7 +120,7 @@
             width: 8rem;
             height: 8rem;
             max-width: 100%;
-            border-radius: .35rem;
+            border-radius: .3rem;
           }
         }
         .episode_overview {

@@ -83,6 +83,11 @@ body {
     font-weight: 700;
     color: $dark;
     text-decoration: none;
+    a {
+      &:hover {
+        color: $highlight;
+      }  
+    }
   }
   nav {
     float: right;

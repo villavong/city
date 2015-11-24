@@ -1,0 +1,32 @@
+<div id="podcast_show">
+	<div id="show_banner">
+		<div class="wrapper_skinny">
+			<h1><%= @student.name %></h1>
+      <h2><%= @student.school %></h2>
+			<p class="description"><%= @student.introduction %></p>
+
+		</div>
+	</div>
+
+	<div id="breadcrumb">
+		<%= link_to students_path do %>
+			All students
+			<span>/</span>
+			<%= @student.name %>
+		<% end %>
+	</div>
+
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+					<li class="cf">
+						<div class="episode_thumbnail">
+						</div>
+						<div class="episode_overview">
+							<p class="description"></p>
+						</div>
+					</li>
+			</ul>
+		</div>
+	</div>
+</div>
