@@ -10,6 +10,7 @@
               <li><%= link_to "New Student", new_student_registration_path %></li>
 
             <% else %>
+              <li><%= link_to "Update Profile", edit_student_registration_path %></li>
               <li><%= link_to "Sign Out", destroy_student_session_path, method: :delete %></li>
             <% end %>
           </ul>
