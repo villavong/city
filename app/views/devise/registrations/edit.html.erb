@@ -3,10 +3,44 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= f.label :major %><br />
+    <%= f.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= f.label "City" %><br />
+    <%= f.select(:city, options_for_select([['Beppu', 'Beppu'], ['Tokyo', 'Tokyo'],['Seoul', 'Seoul'], ['China', 'China'],['Bangkok', 'Bangkok'], ['Jakarta', 'Jakarta']])) %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label "Self Introduction(Languages you speak and where you are from)" %><br />
+    <%= f.text_area :introduction  %>
+  </div>
+  <div class="field">
+    <%= f.label "Your Photo" %><br />
+    <%= f.file_field :photo  %>
+  </div>
+
+
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
