@@ -1,0 +1,22 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1><%= @student.name %></h1>
+    </div>
+  </div>
+  <div id="links">
+    <div class="wrapper_skinny">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Post", new_student_post_path(@student), class: "current" %></li>
+        <li><%= link_to "Profile Settings", edit_student_registration_path %></li>
+        <li><%= link_to "View Student", student_path(current_student) %></li>
+      </ul>
+    </div>
+  </div>
+  <div id="form">
+    <div class="wrapper_skinny">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

@@ -4,15 +4,16 @@
       <h1>Hope to see you in Person</h1>
     </div>
   </div>
-  <!-- <div id="links">
+  <div id="links">
     <div class="wrapper_skinny">
       <ul>
-        <li><%= link_to "Pictures", root_path %></li>
-        <li><%= link_to "Profile Settings", edit_student_registration_path %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Post", new_student_post_path(@student) %></li>
+        <li><%= link_to "Profile Settings", edit_student_registration_path, class: "current" %></li>
+        <li><%= link_to "Other Posts", student_path(current_student) %></li>
       </ul>
     </div>
-  </div> -->
-
+  </div>
 </div>
 
 <div id = "form">

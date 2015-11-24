@@ -1,0 +1,36 @@
+<%= render 'layouts/header'; %>
+
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Hope to see you in Person</h1>
+    </div>
+  </div>
+  <div id="links">
+    <div class="wrapper_skinny">
+      <ul>
+        <li><%= link_to "Pictures", root_path %></li>
+        <li><%= link_to "Profile Settings", edit_student_registration_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<% @posts.each do |post| %>
+					<li class="cf">
+						<div class="episode_thumbnail">
+						</div>
+						<div class="episode_overview">
+							<h2><%= link_to post.title, student_post_path(@student, post) %></h2>
+							<p class="description"><%= truncate(post.description, length: 150) %></p>
+              <div class = "authorized_links">
+                <%= link_to "Edit", edit_student_post_path(@student,post) %>
+                <%= link_to "Delete", student_post_path(@student,post), method: :delete, data: {confirm: "Are you sure?"} %>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
