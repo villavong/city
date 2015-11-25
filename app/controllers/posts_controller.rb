@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_student!
+  # before_filter :require_permission
   before_action :find_student
-  before_action :find_post, only: [:new, :show, :edit, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
   def new
     @post = @student.posts.new
   end
@@ -44,15 +46,19 @@ class PostsController < ApplicationController
   end
 
   def find_student
-    if params[:id].nil?
-      @student = current_student
-    else
-      @student = Student.find(params[:id])
-    end
+
+      @student = Student.find(params[:student_id])
   end
 
   def find_post
     @post = Post.find(params[:id])
   end
+  # def require_permission
+	# 	@student = Student.find(params[:student_id])
+	# 	if current_student != @student
+	# 		redirect_to root_path, notice: "Sorry, You're not allowed to view that page"
+	# 	end
+	# end
+
 
 end
