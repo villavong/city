@@ -13,13 +13,12 @@
 			<span>/</span>
 			<%= @student.name %>
 			<span>/</span>
-
-
-
 		<% end %>
 	</div>
+
   <div id="episode_content">
 		<div class="wrapper_skinny">
+			<%= image_tag @post.post_photo.url(:medium), class: "current_episode_thumbnail" %>
       <h2><%= @post.title %></h2>
 			<p class="description"><%= @post.description %></p>
 		</div>
@@ -31,6 +30,8 @@
 				<% @posts.each do |post| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
+							<%= image_tag post.post_photo.url(:medium) %>
+
 						</div>
 						<div class="episode_overview">
 							<h2><%= link_to post.title, student_post_path(@student, post) %></h2>

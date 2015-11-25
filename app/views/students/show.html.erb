@@ -22,6 +22,7 @@
 				<% @posts.each do |post| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
+							<%= image_tag post.post_photo.url(:medium) %>
 						</div>
 						<div class="episode_overview">
 							<h2><%= link_to post.title, student_post_path(@student, post) %></h2>

@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124074726) do
+ActiveRecord::Schema.define(version: 20151125051047) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "student_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "post_photo_file_name"
+    t.string   "post_photo_content_type"
+    t.integer  "post_photo_file_size"
+    t.datetime "post_photo_updated_at"
   end
 
   add_index "posts", ["student_id"], name: "index_posts_on_student_id"
@@ -41,6 +45,10 @@ ActiveRecord::Schema.define(version: 20151124074726) do
     t.string   "major"
     t.string   "city"
     t.text     "introduction"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true

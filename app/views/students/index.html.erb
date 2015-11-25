@@ -8,7 +8,9 @@
         <%= link_to student do %>
 
           <li>
+            <%= image_tag student.photo.url(:medium) %>
             <div class="podcast_overview">
+              <h2><%= student.name %></h2>
               <p class="episode_count"></p>
             </div>
           </li>
