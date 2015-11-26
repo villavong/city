@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :posts
   end
   authenticated :student do
-    root 'students#dashboard', as:"authenticated_root"
+    root 'welcome#index', as:"authenticated_root"
   end
   root 'welcome#index'
 
