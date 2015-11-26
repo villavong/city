@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
 
 
   def index
-    @students = Student.all.order("created_at DESC")
+    @students = Student.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 
   end
   def show
@@ -17,11 +17,11 @@ class StudentsController < ApplicationController
   end
 
 
-  
+
   private
 
   def find_post
-    @posts = Post.where(student_id: @student).order("created_at DESC")
+    @posts = Post.where(student_id: @student).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 
   end
 

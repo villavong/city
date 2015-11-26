@@ -1,9 +1,9 @@
 <div id="banner" class="podcasts_banner">
-        <h1>Discover what's happening in your City!</h1>
+        <h1>Meet other students in your City!!</h1>
 </div>
 <div id="podcasts" class="cf">
   <div class="wrapper">
-    <ul>
+    <ul class="cf">
       <% @students.each do |student| %>
         <%= link_to student do %>
 
@@ -17,5 +17,7 @@
         <% end %>
       <% end %>
     </ul>
+
+    <%= will_paginate @students, previous_label: "Previous", next_label: "Next" %>
   </div>
 </div>

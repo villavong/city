@@ -18,7 +18,9 @@ class PostsController < ApplicationController
   end
   def show
 
-    @posts = Post.where(student_id: @student).order("created_at DESC").reject { |e| e.id == @post.id}
+    @posts = Post.where(student_id: @student).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+    # .reject { |e| e.id == @post.id}
+
 
   end
 
@@ -42,16 +44,17 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :post_photo)
+    params.require(:post).permit(:title, :description, :post_photo, :city)
   end
 
   def find_student
 
-      @student = Student.find(params[:student_id])
+    @student = Student.find(params[:student_id])
   end
 
   def find_post
     @post = Post.find(params[:id])
+
   end
   # def require_permission
 	# 	@student = Student.find(params[:student_id])
